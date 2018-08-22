@@ -554,6 +554,7 @@ rack with three slots:
   containing the instructions of the function.  Functions are always
   allocated in the global heap, so the code vector never moves.
   Therefore, this address will never need to be updated.
+  % dump-image makes no GC compaction?
 \end{enumerate}
 
 The static environment contains the \emph{code object} as one of its
