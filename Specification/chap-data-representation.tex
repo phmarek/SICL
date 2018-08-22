@@ -104,7 +104,11 @@ another general instance).  The second word contains a tagged pointer
 (with tag $111$) to the first word of the rack.
 
 The first entry of the rack of every general instance is a
-small fixnum called the \emph{stamp} of the general instance.  The
+small fixnum called the \emph{stamp} of the general instance. 
+% "small" just means that there's an alignment hole in every instance.
+% Have a pointer to the corresponding class definition instead?
+
+The
 stamp is the \emph{unique class number} of the class of the general
 instance as it was when the instance was created.  The main purpose of
 this information is to be used in \emph{generic function dispatch}.
@@ -128,10 +132,12 @@ prevent other threads from intervening between the index check and the
 access, for instance by using a \emph{lock}.  In \sysname{}, adjusting
 the array involves creating a new rack with new dimensions,
 and then with a single store instruction associate the new rack
-with the array.  The implementation of \texttt{aref} would then
+with the array. 
+% Concurrent updates in multiple threads?
+The implementation of \texttt{aref} would then
 initially obtain a pointer to the rack and then do the
 index check, the computation of the offset, and the access without
-risking any interference.  No locking is therefore required.  Another
+risking any interference.  Another
 example is a \emph{generic function}.  When a method is added or
 deleted, or when a new sequence of argument classes is seen, the
 generic function must be destructively updated.  Normally, this
@@ -168,6 +174,10 @@ such a solution would waste space and would have to make sure that
 memory leaks are avoided.  We must thus take into account the presence
 of \emph{obsolete instance} in the system, i.e. instances that must
 be \emph{updated} at some later point in time.
+
+% Shouldn't GF depend on (and USE) the exact class definition as well?
+
+% What about concurrent class redefinitions and/or their use?
 
 The solution is to store some kind of \emph{version} information in
 the rack so that when an attempt is made to access an
