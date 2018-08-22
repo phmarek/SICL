@@ -21,6 +21,10 @@ every form to be evaluated.  The subroutine does not use the full
 call that can be done with a \texttt{jsr} instruction (or equivalent)
 on must architectures.
 
+% If that function should be the same everywhere, a fixed register must be 
+% chosen for the flag - so no "register allocation just like any other lexical 
+% variable", right?
+
 The subroutine starts by testing the flag to see whether the thread is
 being debugged.  Under normal circumstances, the value of the flag is
 \emph{false}, so the subroutine returns, and normal execution of the
