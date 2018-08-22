@@ -408,6 +408,10 @@ effective method, the following steps are taken:
  an effective method is computed and invoked. 
 \end{enumerate}
 
+% A worst-case szenario: Have a parent class P with two child classes C0 and C1, 
+% then change C1's definition multiple times (gets consecutive numbers), and 
+% call a generic function only defined for P. Would that be caught?
+
 Notice that in most cases, no explicit test is required to determine
 whether an instance is obsolete.  Also notice that for up-to-date
 general instances, there is no need to access the class of the
