@@ -308,14 +308,14 @@ A code object contains the following information:
   to get the stack location of the saved register.
   See also the \reffig{fig-root-finding-example-1} in 
   \refchap{chap-garbage-collector}.
+\item A table mapping values of the program counter to \emph{source
+  locations}, i.e. line and column information corresponding to the
+  location in the source code of the expression being evaluated.
 \item A vector of strings representing the source code of the
   compilation unit of which this code object is part.  Each string
   corresponds to a line of code.
 \item Information about the file that contains the source code of the
   compilation unit of which this code object is part.
-\item A table mapping values of the program counter to \emph{source
-  locations}, i.e. line and column information corresponding to the
-  location in the source code of the expression being evaluated.
 \item A table mapping values of the program counter to \emph{variable
   liveness information}.
 \item The \emph{concrete syntax tree} corresponding to the source code
