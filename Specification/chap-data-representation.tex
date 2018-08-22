@@ -546,7 +546,11 @@ rack with three slots:
   the function was defined.  We are not giving the details of how the
   static environment is represented here.
 \item The \emph{entry point}.  The entry
-  point is a \emph{raw address} of an aligned word in the vector
+  point is a \emph{raw address} of an aligned word 
+    % but code is just an array of bytes -- will there only be one entry point? 
+  % perhaps another one for optimized calls with keyword arguments translated or 
+  % so?
+  in the vector
   containing the instructions of the function.  Functions are always
   allocated in the global heap, so the code vector never moves.
   Therefore, this address will never need to be updated.
