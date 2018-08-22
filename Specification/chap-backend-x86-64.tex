@@ -132,7 +132,7 @@ processor makes the right guess about the eventual address to be used.
 upon entry to a function when more than $5$ arguments are passed.
 Notice that the return address is not in its final place, and the
 final place for the return address is marked ``unused'' in
-\refFig{fig-x86-64-stack-frame-at-entry}.
+\reffig{fig-x86-64-stack-frame-at-entry}.
 
 \begin{figure}
 \begin{center}
@@ -264,7 +264,7 @@ storing 0 in the field for the \texttt{catch} tag.
 establishes a \texttt{catch} tag and calls a thunk containing the body
 of the \texttt{catch} form.  The \texttt{catch} tag is established by
 allocating (as dynamic local data on the stack) an entry of the second
-type as shown in \refFig{fig-x86-64-catch}
+type as shown in \reffig{fig-x86-64-catch}
 
 \begin{figure}
 \begin{center}
@@ -291,7 +291,7 @@ executed, the point to which control is to be transferred is known
 statically.  The time stamp is also stored in a lexical variable in
 the static environment of closures established inside the
 \texttt{block} form that may execute a corresponding
-\texttt{return-from} form.  \refFig{fig-x86-64-block-tag} shows this
+\texttt{return-from} form.  \reffig{fig-x86-64-block-tag} shows this
 situation.  When the \texttt{block} form is exited normally, the
 \texttt{block}/\texttt{tagbody} entry is popped off the stack and off
 the dynamic environment.

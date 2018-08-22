@@ -11,7 +11,7 @@ also recommend Paul Wilson's excellent survey paper
 We use a per-thread nursery combined with a global allocator for older
 objects.
 
-In \refChap{chap-data-representation} we describe the data
+In \refchap{chap-data-representation} we describe the data
 representation where every heap allocated object is either a two-word
 \texttt{cons} cell or a \emph{general instance} represented as a
 two-word \emph{header} where the first of the two words is a tagged
@@ -43,7 +43,7 @@ consisting of two-word blocks.  This is where dyads are allocated.
 The rack part of the global heap is organized as the space managed by
 an ordinary memory allocator.  Our adaptation of Doug Lea's memory
 allocator that we used for this purpose can be found in
-\refApp{app-memory-allocator}.
+\refapp{app-memory-allocator}.
 
 Since all dyads consist of two words, we can use a mark-and-sweep
 collector for these objects without suffering any fragmentation.  The
@@ -317,7 +317,7 @@ The nursery allocator maintains two pointers into the nursery heap,
 namely the \emph{dyad free pointer} and the \emph{rack free
   pointer}.  The dyad free pointer always has a smaller value than
 the rack free pointer.  These pointers are illustrated in
-\refFig{fig-nursery-pointers}.
+\reffig{fig-nursery-pointers}.
 
 \begin{figure}
 \begin{center}
@@ -451,7 +451,7 @@ variables are kept by each stack frame as follows:
 \end{itemize}
 
 This initial situation is illustrated in
-\refFig{fig-root-finding-example-1}.
+\reffig{fig-root-finding-example-1}.
 
 \begin{figure}
 \begin{center}
@@ -465,7 +465,7 @@ In the first iteration, we start by consulting the callee-saves map.
 Entries that are not $0$ are used to determine a stack location.  The
 contents of that stack location is swapped with the corresponding
 element in the register contents table.  The result of this operation
-is shown in \refFig{fig-root-finding-example-1b}.
+is shown in \reffig{fig-root-finding-example-1b}.
 
 \begin{figure}
 \begin{center}
@@ -475,14 +475,14 @@ is shown in \refFig{fig-root-finding-example-1b}.
 Finding roots, first iteration.}
 \end{figure}
 
-As \refFig{fig-root-finding-example-1b} shows, stack frame $C$ now
+As \reffig{fig-root-finding-example-1b} shows, stack frame $C$ now
 contains only data belonging to this invocation.  The \texttt{frame
   map} is now consulted.  It indicates that stack locations $-2$ and
 $-4$ contain \commonlisp{} objects, so $c_1$ and $c_3$ are identified
 as roots.
 
 The initial situation of the second iteration is shown in
-\refFig{fig-root-finding-example-2}.
+\reffig{fig-root-finding-example-2}.
 
 \begin{figure}
 \begin{center}
@@ -496,7 +496,7 @@ In the second iteration, we start by consulting the callee-saves map.
 Entries that are not $0$ are used to determine a stack location.  The
 contents of that stack location is swapped with the corresponding
 element in the register contents table.  The result of this operation
-is shown in \refFig{fig-root-finding-example-2b}.
+is shown in \reffig{fig-root-finding-example-2b}.
 
 \begin{figure}
 \begin{center}
@@ -506,14 +506,14 @@ is shown in \refFig{fig-root-finding-example-2b}.
 Finding roots, second iteration.}
 \end{figure}
 
-As \refFig{fig-root-finding-example-2b} shows, stack frame $B$ now
+As \reffig{fig-root-finding-example-2b} shows, stack frame $B$ now
 contains only data belonging to this invocation.  The \texttt{frame
   map} is now consulted.  It indicates that stack locations $-2$,
 $-3$, and $-4$ contain \commonlisp{} objects, so $b_1$, $b_2$, and
 $b_3$ are identified as roots.
 
 The initial situation of the third iteration is shown in
-\refFig{fig-root-finding-example-3}.
+\reffig{fig-root-finding-example-3}.
 
 \begin{figure}
 \begin{center}
@@ -527,7 +527,7 @@ In the third iteration, we start by consulting the callee-saves map.
 Entries that are not $0$ are used to determine a stack location.  The
 contents of that stack location is swapped with the corresponding
 element in the register contents table.  The result of this operation
-is shown in \refFig{fig-root-finding-example-3b}.
+is shown in \reffig{fig-root-finding-example-3b}.
 
 \begin{figure}
 \begin{center}
@@ -537,7 +537,7 @@ is shown in \refFig{fig-root-finding-example-3b}.
 Finding roots, third iteration.}
 \end{figure}
 
-As \refFig{fig-root-finding-example-3b} shows, stack frame $C$ now
+As \reffig{fig-root-finding-example-3b} shows, stack frame $C$ now
 contains only data belonging to this invocation.  The \texttt{frame
   map} is now consulted.  It indicates that stack locations $-2$,
 $-3$, and $-4$ contain \commonlisp{} objects, so $a_1$, $a_2$, and

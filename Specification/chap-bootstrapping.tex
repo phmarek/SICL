@@ -730,7 +730,7 @@ compute the resulting expansion code when the macro is invoked.  The
 call form. 
 
 As an example, consider the hypothetical definition of the
-\texttt{and} macro shown in \refCode{code-defmacro-and}.
+\texttt{and} macro shown in \refcode{code-defmacro-and}.
 
 \begin{codefragment}
 \inputcode{code-defmacro-and.code}
@@ -738,15 +738,15 @@ As an example, consider the hypothetical definition of the
 Example implementation of the \texttt{and} macro.}
 \end{codefragment}
 
-In \refCode{code-defmacro-and}, the occurrences of \texttt{car},
+In \refcode{code-defmacro-and}, the occurrences of \texttt{car},
 \texttt{cdr}, \texttt{null}, and \texttt{cond} are part of the
 \emph{expander code} whereas the occurrence of \texttt{when}, of
 \texttt{t}, and the occurrence of \texttt{and} in the last line are
 part of the resulting expansion code. 
 
 The result of expanding the \texttt{defmacro} form in
-\refCode{code-defmacro-and} is shown in
-\refCode{code-macro-expansion-and}. 
+\refcode{code-defmacro-and} is shown in
+\refcode{code-macro-expansion-and}. 
 
 \begin{codefragment}
 \inputcode{code-macro-expansion-and.code}
@@ -754,14 +754,14 @@ The result of expanding the \texttt{defmacro} form in
 Expansion of the macro call.}
 \end{codefragment}
 
-Thus, when the code in \refCode{code-defmacro-and} is compiled by the
+Thus, when the code in \refcode{code-defmacro-and} is compiled by the
 cross compiler, it is first expanded to the code in
-\refCode{code-macro-expansion-and}, and the resulting code is compiled
-instead.  Now \refCode{code-macro-expansion-and} contains an
+\refcode{code-macro-expansion-and}, and the resulting code is compiled
+instead.  Now \refcode{code-macro-expansion-and} contains an
 \texttt{eval-when} at the top level with all three situations (i.e.,
 \texttt{:compile-toplevel}, \texttt{:load-toplevel}, and
 \texttt{:execute}.  As a result, two things happen to the
-\texttt{funcall} form of \refCode{code-macro-expansion-and}:
+\texttt{funcall} form of \refcode{code-macro-expansion-and}:
 
 \begin{enumerate}
 \item It is \emph{evaluated} by the \emph{host function}
@@ -775,7 +775,7 @@ successful, the following must be true:
 \begin{itemize}
 \item All the \emph{functions} and \emph{macros} that are
   \emph{invoked} as a result of the call to \texttt{eval} must exist.
-  In the case of \refCode{code-macro-expansion-and}, the function
+  In the case of \refcode{code-macro-expansion-and}, the function
   \texttt{(setf sicl-environment::macro-function)} must exist, and that
     is all.
 \item All the \emph{macros} that occur in macro forms that are
@@ -807,7 +807,7 @@ successful, the following must be true:
   \texttt{cond}.  Now, the cross compiler uses the \emph{compilation
     environment} of the \emph{target} when looking up macro
   definitions.  Therefore, in order for the example in
-  \refCode{code-defmacro-and} to work, a file containing the
+  \refcode{code-defmacro-and} to work, a file containing the
   definition of the macro \texttt{cond} must first be compiled by the
   cross compiler. 
 \item While it would have been desirable for the \emph{functions} that
@@ -826,7 +826,7 @@ imposes an order between the files to be cross compiled, i.e., that
 the macros of the expansion code must be cross compiled first.  It is
 possible to avoid this restriction entirely by using \emph{auxiliary
   functions} rather than macros.  The alternative implementation of
-the \texttt{and} macro in \refCode{code-defmacro-and-2} shows how this
+the \texttt{and} macro in \refcode{code-defmacro-and-2} shows how this
 is done in the extreme case.
 
 \begin{codefragment}
@@ -835,7 +835,7 @@ is done in the extreme case.
 Alternative implementation of the \texttt{and} macro.}
 \end{codefragment}
 
-We use the technique of \refCode{code-defmacro-and-2} only when the
+We use the technique of \refcode{code-defmacro-and-2} only when the
 expansion code is fairly complex.  An example of a rather complex
 expansion code is that of the macro \texttt{loop} which uses mutually
 recursive functions and fairly complex data structures.  When this

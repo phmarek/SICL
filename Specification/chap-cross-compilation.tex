@@ -4,7 +4,7 @@
 In this chapter, we discuss issues specific to \emph{cross
   compilation}, i.e. when a compiler produces code for a system other
 than the host \commonlisp{} system it runs in.  For general compilation
-topics, see \refChap{chap-compiler}.
+topics, see \refchap{chap-compiler}.
 
 \section{General issues with cross compilation}
 
@@ -124,7 +124,7 @@ simplified in that it does not handle the documentation.
 Simplified definition of the \texttt{defparameter} macro.}
 \end{codefragment}
 
-The definition of \refCode{code-defparameter} is established with the
+The definition of \refcode{code-defparameter} is established with the
 package \texttt{sicl-environment} as the current package.  For that
 reason, the symbols \texttt{ensure-defined-variable} and
 \texttt{symbol-value} are internal to the \texttt{sicl-environment}
@@ -140,7 +140,7 @@ is imported from the package \texttt{common-lisp}.
 
 \section{Compile-time processing of standard macros}
 
-In \refApp{app-all-standard-macros}, we show a complete list of all
+In \refapp{app-all-standard-macros}, we show a complete list of all
 the standard \commonlisp{} macros. 
 
 Most of those macros have no side effects at compile time.  They
