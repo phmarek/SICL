@@ -31,6 +31,8 @@ represent four different \emph{tags} as follows:
   \emph{rack}.  Notice that a rack is not a first-class \commonlisp{}
   object, so it can not be the value of any variable, slot, or
   argument.
+  % Perhaps use -1 instead of +7, in case that offset is better supported
+  % by cpu instructions? Would amount to mostly the same representation.
 \end{itemize}
 
 On a 64-bit machine, floats of type \texttt{short-float} and
