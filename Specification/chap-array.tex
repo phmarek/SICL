@@ -5,16 +5,17 @@ There are a few things that can be done in a portable module for
 arrays. 
 
 Clearly, \texttt{array-dimensions} can be defined in terms of
-\texttt{array-rank} and \texttt{array-dimension}.  On the other hand,
-it can also be done the other way around, i.e., \texttt{array-rank}
-can be computed as the length of the list returned by
+\texttt{array-dimension} and \texttt{array-rank}. On the other hand,
+it can also be computed the other way around, i.e., \texttt{array-rank}
+is the length of the list returned by
 \texttt{array-dimensions}, and \texttt{array-dimension} can be defined
 using the list returned by \texttt{array-dimensions} and
 \texttt{elt}, or \texttt{nth}.  Whether one or the other is chosen
 depends on how arrays are represented.  In \sysname{} the list of
 dimensions is already stored in the array
 \seesec{sec-data-representation-arrays}, so the second solution is
-better, and it also avoids consing. 
+better, and it also avoids consing. Of course, using a destructive
+operation by mistake might wreak havoc then.
 
 \texttt{array-total-size} can be defined in terms of
 \texttt{array-rank} and \texttt{array-dimension}, or in terms of and
