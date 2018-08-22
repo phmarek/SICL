@@ -3,9 +3,11 @@ NAME=sicl
 TEXFILES=$(NAME).tex $(shell ./tex-dependencies $(NAME).tex)
 BIBFILES=$(NAME).bib
 PDF_T=$(shell ./strip-dependence inputfig $(TEXFILES))
+DOTS=$(shell ./strip-dependence includegraphics $(TEXFILES))
 VERBATIM=$(shell ./strip-dependence verbatimtabinput $(TEXFILES))
 CODEFILES=$(shell ./strip-dependence inputcode $(TEXFILES))
 PDF=$(subst .pdf_t,.pdf,$(PDF_T))
+PS=$(subst .ps,.dot,$(wildcard *.dot))
 
 all : $(NAME).pdf
 
@@ -18,7 +20,10 @@ all : $(NAME).pdf
 %.code: %.lisp 
 	./codify $<
 
-$(NAME).pdf: $(TEXFILES) $(PDF) $(PDF_T) $(VERBATIM) $(CODEFILES) $(BIBFILES)
+%.pdf: %.dot
+	dot -Tpdf $< > $@
+
+$(NAME).pdf: $(TEXFILES) $(PDF) $(DOTS) $(PDF_T) $(VERBATIM) $(CODEFILES) $(BIBFILES)
 	pdflatex $<
 	makeindex $(NAME)
 	bibtex $(NAME)
