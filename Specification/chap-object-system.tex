@@ -104,6 +104,7 @@ When some operation on the instance is attempted, the version
 information is checked against the current version of the class.  If
 the instance is obsolete, it is first updated according to the new
 definition of the class.  Furthermore, the version information must
+% definition*s*, in case there were multiple modifications? Done step-by-step?
 contain enough information of the class as it was when the instance
 was created to determine whether slots have been added or removed.
 
@@ -112,6 +113,7 @@ general instance contains a \emph{stamp}, which is the unique number
 of the class as it was when the instance was created.  In addition,
 if the instance is \emph{flexible}, it also contains a reference to the
 \emph{list of effective slots} of the class as it was when the
+% see above, and the idea of keeping old class definitions while they're needed
 instance was created.  This method makes the rack of the
 instance completely self contained.  It allows the garbage collector
 to trace the obsolete instance, or update it before tracing.  It
