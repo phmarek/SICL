@@ -566,13 +566,15 @@ This generic function is used to set the type expander associated with
 If there is already a type expander associated with \textit{symbol} in
 \textit{environment}, then the old type expander is lost.
 
-\Defgeneric {find-package} {name environment}
+\Defgeneric {find-package} {name from-package environment}
 
 Return the package with the name or the nickname \textit{name} in the
 environment \textit{environment}.  If there is no package with that
 name in \textit{environment}, then return \texttt{nil}.  Contrary to
 the standard \commonlisp{} function \texttt{cl:find-package}, for this
 function, \textit{name} must be a string.
+
+% What about package-local nicknames? Needs a "from" package then as well?!
 
 \Defgeneric {package-name} {package environment}
 
@@ -588,14 +590,14 @@ Make the string \textit{new-name} the new name of \textit{package} in
 \textit{environment}.  If \textit{new-name} is \texttt{nil}, then
 \textit{package} no longer has a name in \textit{environment}.
 
-\Defgeneric {package-nicknames} {package environment}
+\Defgeneric {package-nicknames} {package from-package environment}
 
 Return a list of the strings that are nicknames of \textit{package} in
 \textit{environment}.  Contrary to the standard \commonlisp{} function
 \texttt{cl:package-nicknames}, for this function, \textit{package}
 must be a package object.
 
-\Defgeneric {(setf package-nicknames)} {new-names package environment}
+\Defgeneric {(setf package-nicknames)} {new-names package from-package environment}
 
 Associate the strings in the list \textit{new-names} as nicknames of
 \textit{package} in \textit{environment}.
