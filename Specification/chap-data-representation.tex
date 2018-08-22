@@ -395,6 +395,15 @@ rack is rounded up to the nearest multiple of a word.
 The exact class of the array differs according to whether the array is
 simple, has a fill pointer, or is displaced.
 
+\begin{figure}
+\begin{center}
+  \includegraphics[width=4cm]{fig-repr-array.pdf}
+\end{center}
+\caption{How about that? Or have 32bit stamp and 32bit nr-of-dims in same 64bit 
+  word to save on alignment?}
+\end{figure}
+
+
 All arrays are \emph{adjustable} thanks to the split representation
 with a header object and a rack.  Adjusting the array
 typically requires allocating a new rack.

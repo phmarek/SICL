@@ -1,0 +1,3 @@
+digraph {
+  array[shape=record,label="{stamp|fill-pointer|displaced-to|displaced-offset|nr-of-dims|dimensions|...}"];
+}
