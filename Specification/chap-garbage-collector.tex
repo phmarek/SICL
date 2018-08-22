@@ -744,6 +744,10 @@ words left in the nursery heap.
 
 We use \emph{binary search} to find an entry in a break table.
 
+% IMPORTANT! See 
+% http://www.pvk.ca/Blog/2012/07/30/binary-search-is-a-pathological-case-for-caches/ 
+% !!
+
 \subsection{Pointer adjustment phase}
 
 Once the break tables are built, the stack is scanned to find roots, and it
