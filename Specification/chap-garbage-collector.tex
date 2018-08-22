@@ -927,6 +927,8 @@ The contents of the shared variable is read into an ordinary lexical
 variable, and a second copy of it is made.  The
 \texttt{application-blocked} bit is examined.
 
+% This list is the same as above, but better structured.
+
 \begin{enumerate}
 \item If it is cleared, then the \texttt{gc-request} bit is set in the
   second copy, and a CAS operation is attempted.
