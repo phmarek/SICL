@@ -189,6 +189,7 @@ collector traces an obsolete instance, then it must either first
 update it, or the version information must allow the garbage collector
 to trace the obsolete version of the instance.  Our solution allows
 both.  We simply store a reference to the \emph{list of effective
+% why not a vector? might be faster?!
   slots} that the class of the instance defined when the instance was
 created.  This reference is stored as the \emph{second} word of the
 rack (recall that the first word is taken up by the
