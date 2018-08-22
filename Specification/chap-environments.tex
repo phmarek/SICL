@@ -57,7 +57,8 @@ A global environment in \sysname{} would then contain:
   hash table mapping names to packages.
 \item A dictionary of \emph{classes}, represented either as an
   association list or as a hash table mapping names to classes.
-\item A mapping from function names to entries representing functions,
+\item A mapping from function names (symbols and lists like \texttt{(SETF 
+  function)}) to entries representing functions,
   macros, compiler macros, and special operators.
 \item A mapping from names to entries representing type definitions.
 \item A mapping from names to entries representing \emph{dynamic variables}.
