@@ -711,6 +711,7 @@ allocations, a fairly complicated test would have to be devised:
 The compiler will generate runtime information available both to the
 debugger and to the garbage collector.  For each value of the program
 counter%
+% Really each PC? Or only when the source line/stack layout etc. changes?
 \footnote{The values of the program counter are \emph{relative} to the
   beginning of the code object.}, all local locations in use (in
 registers, stack frame, or static environment) have associated type
