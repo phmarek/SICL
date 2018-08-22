@@ -734,7 +734,9 @@ is an address and $d_i$ is a \emph{delta} or an \emph{offset}.  The
 meaning of the elements of a table is that an address that was
 originally between $a_i$ and $a_{i+1}$ should be updated by having
 $d_i$ added to it.  One break table is built for dyads and another
-break table is built for racks.  In the worst case, each of these
+break table is built for racks.
+% Addresses are non-overlapping, so having a single table would work as well
+In the worst case, each of these
 tables may contain three more words than there are free words
 available for it.  This is the reason why a collection is triggered
 when granting a request for allocation would result in fewer than six
