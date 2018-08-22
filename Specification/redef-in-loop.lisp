@@ -14,7 +14,8 @@
                    (last-slot :accessor last-slot :initform 99))))
       do (eval `(defmethod update-instance-for-redefined-class ((inst my-class) added discarded prop-list &rest initargs)
                   (declare (ignore initargs))
-                  (format t "got called for version ~d;~% added ~s~% discarded ~s~% prop ~s~%"
+                  (format t "version ~d got called for version ~d;~% added ~s~% discarded ~s~% prop ~s~%"
+                          ,i
                           (version inst)
                           added
                           discarded
