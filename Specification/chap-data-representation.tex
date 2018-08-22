@@ -444,7 +444,14 @@ information as indicated above.
 
 A string is a subtype of \texttt{array}.  Tentatively, we think that
 there is no need to optimize strings that contain only characters that
-could be represented in a single byte.  Thus the rack of a
+could be represented in a single byte. 
+% Well, a # strings -n 20 <sbcl-core-image>  | wc
+% tells me that there's 760kB of ASCII-strings embedded; in a 32bit
+% representation, that would be 2MB more RAM and disk space wasted.
+% Furthermore, when writing strings to disk or the network (hunchentoot etc.!) 
+% a BASE-STRING can just be passed on to the OS - 32bits must be converted
+% byte-for-byte to UTF8 first, requiring some CPU...
+Thus the rack of a
 \emph{simple} string is represented as follows:
 
 \begin{itemize}
