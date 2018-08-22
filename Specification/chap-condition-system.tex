@@ -31,3 +31,5 @@ uses them.  The first solution favors sharing of conditions that are
 usable by several modules, and the second solution lets the user of a
 module install only the conditions used by that module, without having
 to install a large number of conditions that will never be used.
+
+% Make weak references and let the GC on (dump-image...) figure out what to keep (by having a special list the wanted languages)
