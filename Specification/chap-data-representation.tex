@@ -14,7 +14,7 @@ represent four different \emph{tags} as follows:
 \item \texttt{001}.  This tag is used for \texttt{cons} cells.  A
   pointer to a \texttt{cons} cell is thus a pointer aligned to a
   double word to which the machine integer $1$ has been added.  See
-  \refSec{sec-data-representation-cons-cells} for more information
+  \refsec{sec-data-representation-cons-cells} for more information
   about the representation of \texttt{cons} cells.
 \item \texttt{011}.  This tag is used for various \emph{immediate}
   objects, and in particular for \emph{characters} (see 
@@ -25,7 +25,7 @@ represent four different \emph{tags} as follows:
   is represented by a two-word header object with one word containing
   a tagged pointer to the \emph{class object} and the other word
   containing a tagged pointer to the \emph{rack}.  See
-  \refSec{sec-data-representation-general-instances} for more
+  \refsec{sec-data-representation-general-instances} for more
   information about the representation of general instances.
 \item \texttt{111}.  This tag is used to tag a pointer to a
   \emph{rack}.  Notice that a rack is not a first-class \commonlisp{}
@@ -185,7 +185,7 @@ rack of an obsolete instance, so that it can be traced by
 the garbage collector when necessary.  This solution also allows the
 system to determine which slots have been added and which slots have
 been removed since the instance was created.  As indicated in
-\refSec{sec-data-representation-general-instances}, in order to detect
+\refsec{sec-data-representation-general-instances}, in order to detect
 whether an object is obsolete, the contents of the first word of the
 rack (i.e. the \emph{stamp}) is compared to the
 \emph{class unique number} of the class of the object.  However, this
@@ -205,7 +205,7 @@ are \emph{flexible instances}.
 \seesec{sec-data-representation-flexible-instances}
 
 In addition to allowing for the class of an instance to be modified as
-described in \refSec{sec-data-representation-flexible-instances},
+described in \refsec{sec-data-representation-flexible-instances},
 Subclasses of \texttt{standard-object} must also allow for the class
 of an instance to be changed to some other class (through the use of
 \texttt{change-class}).  However, changing the class of an instance is
@@ -284,7 +284,7 @@ A code object contains the following information:
   fact.  For a typical backend such as x86-64, the entries in the
   table represent the registers \texttt{RBX}, \texttt{R12},
   \texttt{R13}, \texttt{R14}, and \texttt{R15} as describe in
-  \refSec{sec-backend-x86-84-register-use}.  The value of an entry
+  \refsec{sec-backend-x86-84-register-use}.  The value of an entry
   represents the value to add to the value of the base pointer in order
   to get the stack location of the saved register.
 \item A vector of strings representing the source code of the
@@ -446,7 +446,7 @@ Notice also that the symbol does not contain the \emph{property list}
 associated with it.  This information is also kept separately in an
 explicit \emph{global environment} object.
 
-See \refSec{sec-the-global-environment} for more information on
+See \refsec{sec-the-global-environment} for more information on
 global environments.
 
 \subsection{Packages}

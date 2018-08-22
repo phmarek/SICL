@@ -110,7 +110,7 @@ global heap.
 \subsection{Requesting roots}
 
 
-See \refSec{sec-garbage-collection-synchronization-between-collectors}
+See \refsec{sec-garbage-collection-synchronization-between-collectors}
 for more details on this phase.  During this phase, when application
 threads request space from the global heap, objects are allocated
 \emph{black} (see below for more information on the tri-color
@@ -339,7 +339,7 @@ rack are added.
 When a request for allocation would result in less than six free words
 left in the nursery, a collection is first triggered before the
 request is granted.  The reason we need these six spare words is
-explained in \refSec{sec-garbage-collection-break-table-build-phase}.
+explained in \refsec{sec-garbage-collection-break-table-build-phase}.
 
 \subsection{Finding roots}
 \label{sec-garbage-collection-finding-roots}
@@ -374,7 +374,7 @@ To find the roots owned by each stack frame, we use the \emph{return
   address} stored in the stack frame immediately above the one we are
 interested in.  That return address is used to access the \emph{frame
   map} and the \emph{callee-saves map} as described in
-\refSec{data-representation-code-objects}.  Recall that the
+\refsec{data-representation-code-objects}.  Recall that the
 \emph{frame map} is a bitmap that contains an element for each stack
 location containing a \commonlisp{} object that might be heap
 allocated.  For a callee-saves register that might contain a
@@ -564,7 +564,7 @@ corresponding word is part of a live object.  The live bitmap is
 initialized so that all bits are cleared before the mark phase begins.
 
 The mark phase starts by finding the roots as described in
-\refSec{sec-garbage-collection-finding-roots}.  Only pointers to dyads
+\refsec{sec-garbage-collection-finding-roots}.  Only pointers to dyads
 are reported in this phase.  For every dyad found, the two bits in the
 live bitmap corresponding to the two words in the dyad are set to $1$.
 The stack is scanned from top to bottom and then left in that state.
@@ -685,7 +685,7 @@ When a sufficient number of objects have been promoted, the stack is
 traversed to find roots that need to be modified as a result of object
 having been promoted.  However, since the stack is now in a state
 where every local variable is stored in the stack frame that owns it
-as \refSec{sec-garbage-collection-finding-roots} explains, we only
+as \refsec{sec-garbage-collection-finding-roots} explains, we only
 need to consult the frame map of each frame to determine the roots.
 Whether the root contains a pointer to a dyad or to some element of
 a rack, the promotion bitmap for that pointer is consulted.  If it
@@ -731,7 +731,7 @@ We use \emph{binary search} to find an entry in a break table.
 
 Once the break tables are built, the stack is scanned to find roots, and it
 is also restored to its initial state as describe in
-\refSec{sec-garbage-collection-finding-roots}.  For each root that
+\refsec{sec-garbage-collection-finding-roots}.  For each root that
 contains a pointer to the nursery, we determine whether it is pointer
 to a dyad or to a rack, and consult the corresponding break table to
 determine a value to be added to the current one.  Notice that we can

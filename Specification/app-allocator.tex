@@ -45,7 +45,7 @@ significant ones.%
   sizes this way would not be enough, at least for the foreseeable future.}
 
 A free chunk is linked into a doubly linked list of chunks in the same
-bin.  See \refSec{sec-memory-allocator-bins-of-chunks} for more
+bin.  See \refsec{sec-memory-allocator-bins-of-chunks} for more
 details about the available bins.  If there are two consecutive chunks
 $C1$ and $C2$ in the linked list in a bin, then $C1$ is said to be the
 \emph{previous} chunk with respect to $C2$ and $C2$ is said to be the
@@ -135,7 +135,7 @@ the chunk contains user data and the reserved word.
 \label{sec-memory-allocator-bins-of-chunks}
 
 As indicated in
-\refSec{sec-memory-allocator-memory-divided-into-chunks}, we maintain
+\refsec{sec-memory-allocator-memory-divided-into-chunks}, we maintain
 a number of \emph{bins} containing chunks of similar size.  There are
 $512$ bins in total, numbered from $0$ to $511$.  Each of the bins
 from $0$ to $63$ contains chunks of a single size.  Bin $0$
