@@ -58,6 +58,21 @@ R15 & Register variable & Callee\\
 \hline
 \end{tabular}
 
+\begin{tabular}{|c|c|}
+\hline
+  \multicolumn{2}{|c|}{Ordered by}\\
+\hline
+Input & Output \\ \hline
+\hline
+  RDI & RAX \\ \hline
+  RSI & RDX \\ \hline
+  RDX & RCX \\ \hline
+  RCX & RSI \\ \hline
+  R8  & R9 (value pointer) \\ \hline
+  R5 (count) & RDI (value count) \\ \hline
+\end{tabular}
+
+
 \section{Representation of function objects}
 
 \begin{itemize}
