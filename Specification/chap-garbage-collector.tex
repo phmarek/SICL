@@ -764,6 +764,8 @@ Next, dyads in the nursery are traversed.  For a \texttt{cons} cell,
 the first break table is consulted in order to adjust both the
 \texttt{car} and the \texttt{cdr}.  For a general instance, the first
 break table is consulted in order to adjust the \texttt{class} slot
+% Aren't class definitions put in global heap by default? Do they need promotion 
+% like everything else?
 and the second break table is consulted in order to adjust the
 \texttt{rack} slot.  Once the rack slot has been adjusted, the rack is
 traversed according to the class in order to determine what words of
