@@ -379,6 +379,7 @@ The general consensus seems to be that other subtypes are allowed.
 An array being a general instance, it is represented as a two-word
 header object and a rack.  The second word of the rack
 contains a proper list of dimensions.  The length of the list
+% Why not a vector? Might be faster.
 is the \emph{rank} of the array.
 
 If the array is \emph{simple}, the second word is directly followed
