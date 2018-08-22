@@ -52,6 +52,8 @@ move, which is preferable when they are used as keys in hash tables
 and when they are used to communicate with code in foreign languages
 that assume that an address of an object is fixed once and for all.
 
+% if they "never" move, can that mean OOM for a thread?
+
 Since the rack part of the global heap is managed by an ordinary
 memory allocator, the racks also do not move once allocated.  This
 fixed position is advantageous for code on some architectures.  For
