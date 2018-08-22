@@ -163,6 +163,7 @@ maintained.  The bit in the secondary bitmap is set if there is at
 least one bit set in the 64-bit word in the primary bitmap.
 Additional levels of index exist until the last level fits in a single
 64-bit word.
+% 64bit split done even on 32bit platforms?
 
 To include an object in the set of gray objects, the address is used
 to determine a bit position in the primary bitmap.  Before the
