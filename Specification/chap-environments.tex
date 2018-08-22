@@ -272,9 +272,10 @@ signaled.
 
 If \textit{function-name} is associated with an ordinary function or a
 generic function in \textit{environment}, then the return value of
-this function is either \texttt{nil}, \texttt{inline}, or
-\texttt{notinline}.  If no inline proclamation has been made, then
+this function is either \texttt{nil}, \texttt{:inline}, or
+\texttt{:notinline}.  If no inline proclamation has been made, then
 this generic function returns \texttt{nil}.
+% or sicl:inline etc.?
 
 \Defgeneric {(setf function-inline)}\\
 {new-inline function-name environment}
