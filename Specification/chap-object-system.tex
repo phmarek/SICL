@@ -319,7 +319,7 @@ was removed, a new discriminating function is computed and installed.
 
 When a class metaobject is reinitialized, that class metaobject and
 all of its subclasses are traversed.  For each class metaobject
-traversed, \texttt{specializer-direct-methods} is called to determine
+traversed, the function \texttt{specializer-direct-methods} is called to determine
 which methods contain that class as a specializer.  By definition, any
 such method will be associated with a generic function.  The call
 history of that generic function is traversed to determine whether
