@@ -288,6 +288,9 @@ fixnum.  If the reference returned by this function is dropped and not
 passed to \texttt{allocate-header} then the corresponding memory is
 lost forever.
 
+% Not reclaimed by GC at some time? How would I free it if I (resp. my foreign 
+% function) detects an error before the header gets allocated?
+
 \Defun {allocate-header} {class rack}
 
 This function allocates a new two-word header and returns a tagged
