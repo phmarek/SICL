@@ -1,11 +1,11 @@
 #!/bin/sh
 CHAINE=$1
-MOTIF="^\\\\$CHAINE\{.*\}"
+MOTIF="^\s*\\\\$CHAINE.*\\{"
 shift
 for i in $*
 do
     egrep $MOTIF $i \
-    | sed  "s/^\\\\$CHAINE{\(.*\)}/\1/" \
+    | sed  "s/^\s*\\\\$CHAINE\(\[.*\]\)\?{\(.*\)}/\2/" \
     | tr ['\n'] [' ']
 done
 
