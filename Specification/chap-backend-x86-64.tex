@@ -262,6 +262,8 @@ exist:
   \item An entry representing a \texttt{block} or a \texttt{tagbody}.
     It is similar to the entry representing a \texttt{catch} tag.  The
     entry contains a single field containing a time stamp represented
+    % Why a timestamp? why not the pointer to the symbol? Might help debugging 
+    % as well?!
     as a fixnum.  This time stamp becomes part of the static
     environment of any function nested inside the \texttt{block} or
     \texttt{tagbody} form that contains a \texttt{return-from} or a
