@@ -37,6 +37,18 @@ source file, and this fact often discourages the programmer from
 providing good docstring.  Third, it makes internationalization
 harder.
 
+% in case you're interested in my opinion: docstrings are good.
+% 0. Same place is easy to remember to fix
+% 1. docstrings can be hidden via the editor
+% 2. is a valid point - perhaps docstrings should be defined as ignoring 
+%    whitespace and a ";" at the beginning of each line?
+% 3. basically true, but shouldn't be an issue - English is the de-facto 
+%    language. PLEASE PLEASE PLEASE don't make the localized-WinWord-Macro times 
+%    come back, with a macro written in a German office installation being 
+%    unusable in an English one and vice versa ...  ;)
+% 4. even after 10 years doing CL I still often need the docstrings of the more 
+%    verbose functions (OPEN etc.)
+
 For this reason, we will provide language-specific files containing
 all docstrings of Common Lisp in the form of calls to \texttt{(setf
 documentation)}. 
