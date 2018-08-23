@@ -143,6 +143,10 @@ storing the return address in its final place using some other method,
 we make sure that the predictor for the return address of the
 processor makes the right guess about the eventual address to be used.
 
+% Stack pictures: please show address direction (higher/lower addresses), and 
+% stack grow direction. I'd have expected RSP to be at the lower bottom, BTW 
+% - it is the lowest address on x86 after all...
+
 \refFig{fig-x86-64-stack-frame-at-entry} shows the layout of the stack
 upon entry to a function when more than $5$ arguments are passed.
 Notice that the return address is not in its final place, and the
