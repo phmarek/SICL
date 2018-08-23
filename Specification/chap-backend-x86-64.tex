@@ -369,6 +369,13 @@ intervening exit points, and they are marked as invalid as indicated
 above.  Traversal stops when the stack frame of the valid exit point
 is reached.  Unwinding now begins.  The dynamic environment is
 traversed again and thunks in \texttt{unwind-protect} entries are
+% this should happen in lockstep:
+% The cleanup forms in 
+%    (LET ((*foo* 1))
+%      (unwind-protect
+%         ...
+%         ))
+% should still see the binding, right?
 executed.  The traversal again stops when the stack frame of the valid
 exit point is reached.
 
