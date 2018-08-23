@@ -435,7 +435,7 @@ Address space layout for the x86-64 backend.}
 
 When the callee accepts keyword arguments, it is convenient to have
 all the arguments in a properly-ordered sequence somewhere in memory.
-We obtain this sequence by pushing the register arguments to the stack
+We obtain this sequence by pushing the keyword arguments to the stack
 in reverse order, so that the first argument is at the top of the
 stack.  When more than $5$ arguments are passed, the program counter
 is popped off the top of the stack, thereby moving it to its final
