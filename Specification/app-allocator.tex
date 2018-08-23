@@ -81,6 +81,15 @@ Chunk in use followed by free chunk.}
 \end{figure}
 % figure should show reserved word; and "prvious" in this and the next figure.
 
+\begin{figure}
+\begin{center}
+  \includegraphics[width=12cm]{fig-mem-alloc-1.pdf}
+\end{center}
+\caption{Some free memory, shown as cut into the individual chunks.}
+\end{figure}
+
+
+
 As \reffig{fig-chunks2} shows, the next-to-last bit of the first word
 of the first chunk and the last bit of the first word of the second
 chunk are both $1$, indicating that the first chunk is in use.  The

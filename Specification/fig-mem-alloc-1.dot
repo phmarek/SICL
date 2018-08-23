@@ -1,0 +1,21 @@
+digraph {
+rankdir=LR;
+
+s1 [label=sentinel, shape=box];
+s2 [label=sentinel, shape=box];
+
+#used1 [shape=record,label="{{{size|0| }|{{userdata...}}}}"];
+free1 [shape=record,label="{{{size|0| }|<p>prev|<n>next|{{...}}}}"];
+free2 [shape=record,label="{{{size|0| }|<p>prev|<n>next|{{...}}}}"];
+
+s1:e -> free1:p:nw;
+free1:p:w -> s1:se ;
+
+free1:n:e -> free2:p:nw;
+free2:p:w -> free1:n:se;
+
+s2:w -> free2:n:se;
+free2:n:e -> s2:nw ;
+
+}
+
