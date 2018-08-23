@@ -60,6 +60,7 @@ The caller allocates the frame for the callee.
 
 The callers saves its FP and sets FP to SP.  It then subtracts from SP
 $4*N$ where $N$ is the number of arguments to be passed.  Notice that even
+% 4 because of 32bit? What about 64bit ARM?
 if all the arguments to be passed will fit in the argument registers,
 the caller still leaves room in the stack frame of the callee.  The
 main reason for this way of doing it is so that FP-SP = argcount words in
