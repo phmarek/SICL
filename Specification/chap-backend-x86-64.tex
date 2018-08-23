@@ -123,7 +123,7 @@ Normal call to external function, passing in more than $5$ arguments:
 \item Store the first $5$ arguments in RDI, RSI, RDX, RCX, and R8.
 \item Store the remaining arguments in [RSP$ + 0$], [RSP$ + 8$],
   $\ldots$, [RSP$ + 8(N - 6)$] in that order, so that the sixth
-  argument is on top of the stack.
+  argument is on top of the stack pointer.
 \item Store the argument count in R9 as a fixnum.
 \item Load the static environment of the callee from the callee
   function object into R10.
