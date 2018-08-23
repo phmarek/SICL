@@ -209,6 +209,13 @@ to the expectations would look like this:
   (unless (null item) ...))
 \end{verbatim}
 
+% I like to do exceptional handling first via
+%   (let ((item (find ...)))
+%     (when (null item)
+%       ...)
+%     ...)
+% just a remark ;)
+
 \section{General structure of recursive functions}
 
 When possible, a recursive function should be structured like a
