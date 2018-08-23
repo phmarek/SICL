@@ -249,6 +249,8 @@ but rather
 Even when the base case does not return anything useful, it should be
 handled first.  The following code violates the expectations:
 
+% Next examples are missing a (LABELS ((traverse (node)))
+
 \begin{verbatim}
 (defun map-conses (function tree)
  (unless (atom node)
