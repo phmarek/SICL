@@ -185,6 +185,8 @@ Tail call to external function, passing in more than $5$ arguments:%
 \fixme{Determine the protocol.}
 
 For \emph{internal calls} there is greater freedom, because the caller
+% Are these LAMBDA, LABELS, and FLET only? Because normal calls shouldn't inline 
+% to facilitate redefinition.
 and the callee were compiled simultaneously.  In particular, the
 caller might copy some arbitrary \emph{prefix} of the code of the
 callee in order to optimize it in the context of the caller.  This
