@@ -167,7 +167,9 @@ Tail call to external function, passing at most $5$ arguments:
 \item Compute the callee function object and the arguments into
   temporary locations.
 \item Store the arguments in RDI, RSI, RDX, RCX, and R8.
+  % what about optional arguments? Special value (unbound)?
 \item Store the argument count in R9 as a fixnum.
+  % Even for a fixed number of arguments and some optimization level?
 \item Load the static environment of the callee from the callee
   function object into R10.
 \item Copy the value of \texttt{RBP}$ - 8$ to RSP, establishing the stack frame
