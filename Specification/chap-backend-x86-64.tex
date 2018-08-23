@@ -219,6 +219,8 @@ Return from callee to caller with $1$ to $4$ values:
 
 \begin{enumerate}
 \item Store the values to return in RAX, RDX, RCX, RSI.
+  % Do that later to have more registers available for computing the other 
+  % values?
 \item Store the number of values in RDI, represented as a fixnum.
 \item Store the value of \texttt{RBP}$ - 8$ in RSP so that the stack frame
   contains only the return address.  To accomplish this effect, the
